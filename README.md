@@ -9,7 +9,10 @@ Temps de travail sur le backend: 1h35
     -53 Min pour setup le back et le front + installer la db (login/register)  
     -42 Min pour ajouter les routes restantes  
   
-Temps de travail sur le frontend:
+Temps de travail sur le frontend:  
+    -1h02 pour setup le routing et la passe d'inforations dans le back et entre les pages (login/register)  
+    -35 Min pour setup le reste des fonctionnalités  
+    - Min pour modifier l'HTML/CSS et styliser la page  
 
 
 Pour des raisons personnelles j'ai été interrompu et ai donc effectué ce test technique en deux parties (une pour le front, une pour le back).  
