@@ -12,8 +12,9 @@ Temps de travail sur le backend: 1h35
 Temps de travail sur le frontend:  
     -1h02 pour setup le routing et la passe d'inforations dans le back et entre les pages (login/register)  
     -35 Min pour setup le reste des fonctionnalités  
-    - Min pour modifier l'HTML/CSS et styliser la page  
-
+    -30 Min pour modifier l'HTML/CSS et styliser la page (J'avoue avoir obtenu un résultat peu concluent en l'absence de DA  
+  
+Comme je l'ai déjà dit, les départs "from scratch" sont loin d'être mon fort en l'absence de support, les temps réalisés seraient probablement bien moindre lors d'un prochain test (notamment l'1h02 sur le frontend).  
 
 Pour des raisons personnelles j'ai été interrompu et ai donc effectué ce test technique en deux parties (une pour le front, une pour le back).  
   
@@ -29,7 +30,7 @@ Format type: [{type_de_commit}] - Description de la fonctionnalité
 {type_de_commit} peut prendre les formes suivantes selon les circonstances: ADD, DEL, FIX, NORM  
   
 # Lancement du back:  
-Dans le dossier server: npm start  
+Dans le dossier server: npm i ; npm start  (ou npm start si déjà installé)  
   
 # Lancement du front:  
-Dans le dossier client: ng serve  
+Dans le dossier front: npm i ; ng serve  (ou ng serve si déjà installé)  
