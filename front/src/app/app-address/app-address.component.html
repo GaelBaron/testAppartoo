@@ -1,33 +1,39 @@
 <div>
-    <a routerLink="/">Disconnect</a>
+    <button class="button" routerLink="/">Disconnect</button>
 </div>
 <nav>
-    <ul>
-        <li *ngFor="let user of userList">{{user}}<button type="button" (click)="AddByName(user)">+</button></li>
-    </ul>
-    <div>{{user.role}}</div>
+    <div>
+        <ul style="padding-top: 10px; padding-bottom: 10px;">
+            <li  style="padding-top: 10px; padding-bottom: 10px; float:left; padding-left: 30px;" *ngFor="let user of userList">{{user}}<button class="button" type="button" (click)="AddByName(user)">+</button></li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <div style="text-align: center; width: 250px; height: 50px; background-color: #008662; margin-left: 45%;">
+        <div style="padding-top: 10px;">I'm a {{user.role}}</div>
+    </div>
     <form>
-        <div class="from-group">
-            <label>Change Rôle</label>        
+        <div style="padding-top: 10px; padding-bottom: 10px;">
+            <label>Change Rôle: </label>        
             <input type="text" name="Role"
-            class="form-control"
+            class="input"
             [(ngModel)]="newRole">
-        </div>
-        <div>
-            <button type="button" (click)="ChangeRole()">Change my life !</button>
-        </div>
-    </form>    <form>
-        <div class="from-group">
-            <label>Friend Name</label>        
-            <input type="text" name="Role"
-            class="form-control"
-            [(ngModel)]="friendname">
-        </div>
-        <div>
-            <button type="button" (click)="Add()">Add</button>
+            <button style="margin-left: 10px;" class="button" type="button" (click)="ChangeRole()">Change my life !</button>
         </div>
     </form>
-    <ul>
-        <li *ngFor="let friend of friendList">{{friend.name}} + {{friend.role}}<button type="button" (click)="Del(friend.name)">x</button></li>
+    <div style="text-align: center; width: 250px; height: 50px; background-color: #008662; margin-left: 45%;">
+        <div style="padding-top: 10px;">Look at all of this friends !</div>
+    </div>
+    <form>
+        <div style="padding-top: 10px; padding-bottom: 10px;">
+            <label>Friend Name</label>        
+            <input type="text" name="Role"
+            class="input"
+            [(ngModel)]="friendname">
+            <button style="margin-left: 10px;" class="button" type="button" (click)="Add()">Add</button>
+        </div>
+    </form>
+    <ul style="padding-top: 10px; padding-bottom: 10px;">
+        <li  style="padding-top: 10px; padding-bottom: 10px;" *ngFor="let friend of friendList">{{friend.name}} + {{friend.role}}<button class="button" type="button" (click)="Del(friend.name)">x</button></li>
     </ul>
 </nav>
