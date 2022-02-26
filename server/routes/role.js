@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
 
-router.get("/role/get", async (req, res) => {
+router.post("/role/get", async (req, res) => {
     const { username } = req.body;
 
     try {
@@ -42,7 +42,7 @@ router.post("/role/change", async (req, res) => {
             }
         }
         newUser.save();
-        return (res.status(200).json({user: newUser}))
+        return (res.status(200).json({role: newUser.role}))
     } catch (err) {
         console.log(err);
     }

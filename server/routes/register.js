@@ -12,7 +12,7 @@ router.post("/register", async (req, res) => {
             return (res.status(400).json({Error: "Require an username, a password and a role"}));
         }
 
-        const oldUsername = await User.findOne({ username: sername })
+        const oldUsername = await User.findOne({ username: username })
 
         if (oldUsername) {
             return (res.status(400).json({Error: "Username already taken"}));

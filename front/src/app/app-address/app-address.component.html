@@ -1,0 +1,33 @@
+<div>
+    <a routerLink="/">Disconnect</a>
+</div>
+<nav>
+    <ul>
+        <li *ngFor="let user of userList">{{user}}<button type="button" (click)="AddByName(user)">+</button></li>
+    </ul>
+    <div>{{user.role}}</div>
+    <form>
+        <div class="from-group">
+            <label>Change Rôle</label>        
+            <input type="text" name="Role"
+            class="form-control"
+            [(ngModel)]="newRole">
+        </div>
+        <div>
+            <button type="button" (click)="ChangeRole()">Change my life !</button>
+        </div>
+    </form>    <form>
+        <div class="from-group">
+            <label>Friend Name</label>        
+            <input type="text" name="Role"
+            class="form-control"
+            [(ngModel)]="friendname">
+        </div>
+        <div>
+            <button type="button" (click)="Add()">Add</button>
+        </div>
+    </form>
+    <ul>
+        <li *ngFor="let friend of friendList">{{friend.name}} + {{friend.role}}<button type="button" (click)="Del(friend.name)">x</button></li>
+    </ul>
+</nav>

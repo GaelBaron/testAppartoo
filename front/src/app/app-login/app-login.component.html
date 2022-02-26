@@ -1,0 +1,26 @@
+<nav>
+    <form>
+        <div class="from-group">
+            <label>Username</label>        
+            <input type="text" name="Username"
+            class="form-control"
+            [(ngModel)]="user.username">
+        </div>
+        <div class="from-group">
+            <label>Password</label>        
+            <input type="text" name="Password"
+            class="form-control"
+            [(ngModel)]="user.password">
+        </div>
+        <div class="from-group">
+            <label>Role</label>        
+            <input type="text" name="Role"
+            class="form-control"
+            [(ngModel)]="user.role">
+        </div>
+        <div>
+            <button type="button" (click)="onLoggedin()">Connexion</button>
+            <button type="button" (click)="onRegister()">Register</button>
+        </div>
+    </form>
+</nav>

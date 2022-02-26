@@ -4,7 +4,7 @@ const router = express.Router()
 const jwt = require('jsonwebtoken')
 const user = require("../model/user")
 
-router.get("/friends/get", async (req, res) => {
+router.post("/friends/get", async (req, res) => {
 
     try {
         const { username } = req.body;
@@ -24,12 +24,27 @@ router.get("/friends/get", async (req, res) => {
     }
 })
 
+router.get("/user/list", async (req, res) => {
+
+    try {
+        const filter = {}
+        const all = await User.find(filter);
+        var allNames = [];
+        for (var i = 0; all[i]; i++) {
+            allNames[i] = all[i].username;
+        }
+        return (res.status(200).json({users: allNames}))
+    } catch (err) {
+      console.log(err)
+    }
+})
+
 router.post("/friends/add", async (req, res) => {
 
     try {
         const { username, friendname } = req.body;
   
-        if (!username || !friendname)
+        if (!username || !friendname || (username == friendname))
             return (res.status(400).json({Error: "Require username and friend"}))
 
             const user = await User.findOne({ username: username })
@@ -67,14 +82,17 @@ router.post("/friends/unfriend", async (req, res) => {
             }
 
             var newFriendList = [];
+            var j = 0;
             for (var i = 0; user.friends[i]; i++) {
-                if (user.friends[i].name != friendname)
-                    newFriendList = user.friends[i]
+                if (user.friends[i].name != friendname) {
+                    newFriendList[j] = user.friends[i];
+                    j++;
                 }
+            }
             user.friends = newFriendList;
             user.save();
-            return (res.status(200).json({Validate: "This user isn't your friend anymore"}));
-    } catch (err) {
+            return (res.status(200).json({friends: user.friends}))
+        } catch (err) {
       console.log(err)
     }
 })
